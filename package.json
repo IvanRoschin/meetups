@@ -2,6 +2,7 @@
   "name": "react-app",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://IvanRoschin.github.io/meetups/",
   "dependencies": {
     "@jamesives/github-pages-deploy-action": "^4.4.3",
     "@testing-library/jest-dom": "^5.17.0",

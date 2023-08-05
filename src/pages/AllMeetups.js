@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { MeetupList } from "../components/meetups/MeetupList";
+import { Link } from "react-router-dom";
 
 export const AllMeetupsPage = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -43,10 +44,23 @@ export const AllMeetupsPage = () => {
     );
   }
 
+  let content;
+
+  if (loadedMeetups.length === 0) {
+    content = (
+      <p>
+        Ooops, you got no favorites yet. Start{" "}
+        <Link to={"/new-meet"}>adding</Link> some?
+      </p>
+    );
+  } else {
+    content = <MeetupList meetups={loadedMeetups} />;
+  }
+
   return (
     <section>
       <h1>All Meetups</h1>
-      <MeetupList meetups={loadedMeetups} />
+      {content}
     </section>
   );
 };

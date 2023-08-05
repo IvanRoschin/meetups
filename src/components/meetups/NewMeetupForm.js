@@ -16,7 +16,6 @@ export const NewMeetupForm = (props) => {
       address: addressInputRef.current?.value,
       description: descriptionInputRef.current?.value,
     };
-    console.log("MeetupData", meetupData);
     props.onAddMeetup(meetupData);
   };
 
